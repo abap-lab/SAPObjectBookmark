@@ -1,9 +1,9 @@
 *&---------------------------------------------------------------------*
-*& Module Pool       ZOBJECT_BOOKMARK
-*&
+*& Program ID  : ZOBJECT_BOOKMARK
+*& Owner       : SAP FI LAB ( WWW.FI-LAB.COM )
 *&---------------------------------------------------------------------*
-*&
-*&
+*& Description : Table 을 즐겨찾기 해 놓고, 조회/수정할 수 있는 기능
+*& Create date : 2018.09.01 ( Korea seoul )
 *&---------------------------------------------------------------------*
 
 INCLUDE zobject_bookmark_top                    .    " global Data
