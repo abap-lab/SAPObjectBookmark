@@ -93,11 +93,11 @@
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEXT</TYPE>
        <NAME>T_COMM</NAME>
-       <TEXT>Table_와_간단한_설명을_입력해_주세요.!_____________</TEXT>
+       <TEXT>**_Enter_table_and_one_line_description._____________</TEXT>
        <LINE>001</LINE>
        <COLUMN>001</COLUMN>
-       <LENGTH>038</LENGTH>
-       <VISLENGTH>038</VISLENGTH>
+       <LENGTH>053</LENGTH>
+       <VISLENGTH>053</VISLENGTH>
        <HEIGHT>001</HEIGHT>
        <FORMAT>CHAR</FORMAT>
        <REQU_ENTRY>N</REQU_ENTRY>
