@@ -397,16 +397,27 @@ ENDFORM.                    " ASSIGN_DBTAB
 *  <--  p2        text
 *----------------------------------------------------------------------*
 FORM read_dbtab .
-********************************************************
-  CLEAR : <fs_tab>[].
+  DATA : LV_COUNT LIKE RSEUMOD-TBMAXSEL.
 
+  CLEAR : <fs_tab>[].
   " Selection with parameters
   CLEAR : gt_where[], gt_dyntab[].
 
+********************************************************
+** 2018-09-15, FI-LAB, Settings by user ID : Number of base table queries
+
+  SELECT SINGLE TBMAXSEL
+    INTO LV_COUNT
+    FROM RSEUMOD
+   WHERE UNAME = SY-UNAME.
+
+  IF SY-SUBRC <> 0.
+     LV_COUNT = 100.
+  ENDIF.
+********************************************************
   IF gv_active = 0.
-*** 무조건 100건으로 출력
     SELECT * INTO TABLE <fs_tab>
-             UP TO 100 ROWS
+             UP TO LV_COUNT ROWS
              FROM (g_tabnm)
              CLIENT SPECIFIED
             WHERE mandt = sy-mandt.
@@ -422,15 +433,16 @@ FORM read_dbtab .
       APPEND LINES OF gs_where-where_tab TO gt_dyntab.
     ENDLOOP.
 
-*** 무조건 100건으로 출력
     SELECT * INTO TABLE <fs_tab>
-             UP TO 100 ROWS
+             UP TO LV_COUNT ROWS
              FROM (g_tabnm)
             WHERE (gt_dyntab).
   ENDIF.
 
   IF sy-dbcnt = 0.
     MESSAGE s001(00) WITH 'No entry selected!'.
+  ELSE.
+    MESSAGE s001(00) WITH sy-dbcnt ' entry selected!'.
   ENDIF.
 ********************************************************
 
