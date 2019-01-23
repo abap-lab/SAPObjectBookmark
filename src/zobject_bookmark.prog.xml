@@ -123,7 +123,7 @@
        <CONT_TYPE>SCREEN</CONT_TYPE>
        <CONT_NAME>SCREEN</CONT_NAME>
        <TYPE>TEMPLATE</TYPE>
-       <NAME>g_101_tab_id</NAME>
+       <NAME>G_101_TAB_ID</NAME>
        <TEXT>__________________________</TEXT>
        <LINE>003</LINE>
        <COLUMN>013</COLUMN>
